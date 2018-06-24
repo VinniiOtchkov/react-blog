@@ -3,7 +3,7 @@ import axios from 'axios';
 export const fetchComments = () => {
     return{
         type: 'FETCH_COMMENTS',
-        payload: axios(`https://jsonplaceholder.typicode.com/comments`);
+        payload: axios(`https://jsonplaceholder.typicode.com/comments`)
     }  
 }
 
