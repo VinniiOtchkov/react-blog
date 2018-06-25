@@ -1,11 +1,13 @@
 nav .brand-logo{
-    margin-left: 175px;
+    margin-left: 150px;
     color: #fff;
     display: inline-block;
     font-size: 2.1rem;
     padding: 0;
     white-space: nowrap;
     position: static;
+    font-family: 'Montserrat Subrayada', sans-serif;
+    text-shadow: 3px 4px 2px rgba(150, 150, 150, 1);
 }
 
 nav {

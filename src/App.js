@@ -21,8 +21,8 @@ import * as AuthorActions from './actions/authors';
 class App extends Component {
 
   componentDidMount() {
-    this.props.PostActions.fetchPosts();
     this.props.AuthorActions.fetchAuthors();
+    this.props.PostActions.fetchPosts();
     this.props.CommentActions.fetchComments();
   }
 

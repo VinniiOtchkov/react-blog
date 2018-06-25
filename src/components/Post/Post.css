@@ -2,8 +2,17 @@
     width: 90%;
     margin-right: 5%;
     margin-left: 5%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .card-image {
-    width: 9%;
+    width: 15%;
+}
+
+.card .card-content .card-title {
+    margin-left: 4%;
+}
+
+.card .card-reveal .card-title {
+    margin-left: 4%;
 }

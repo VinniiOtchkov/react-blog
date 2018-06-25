@@ -11,7 +11,7 @@ export default (state = initialState, action) => {
     case 'ADD_POST_PENDING':
       return state;
     case 'ADD_POST_FULFILLED':
-      return [...action.payload.data, ...state];
+      return [action.payload.data, ...state];
     case 'ADD_POST_REJECTED':
       return state;
 
