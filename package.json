@@ -2,6 +2,7 @@
   "name": "react-dauntless-blog",
   "version": "0.1.0",
   "private": true,
+  "homepage" : "http://VinniiOtchkov.github.io/react-blog",
   "dependencies": {
     "axios": "^0.18.0",
     "react": "^16.4.1",
