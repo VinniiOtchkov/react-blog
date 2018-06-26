@@ -1,12 +1,13 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Navbar, NavItem, Icon} from 'react-materialize';
+import { withRouter } from 'react-router-dom';
 import './Nav.css';
 
 const Nav = (props) => {
 let goHome = (e) => {
     e.preventDefault();
-    console.log('works!')
+    console.log(props)
   }
         return (
             <div>
@@ -19,4 +20,4 @@ let goHome = (e) => {
         )
 }
 
-export default Nav;
+export default withRouter(Nav);

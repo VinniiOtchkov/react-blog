@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { Row, Input, Button, Icon } from 'react-materialize';
+import { Input, Button, Icon } from 'react-materialize';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { Link } from 'react-router-dom';
 import * as PostActions from '../../actions/posts';
 import './NewPost.css';
 
@@ -27,7 +26,7 @@ class NewPost extends Component {
     this.setState({title: value}) : 
     field === 'body' ? 
     this.setState({body: value}) : 
-    this.setState({authorID: parseInt(value)})
+    this.setState({authorID: +value})
   }
 
   handleSubmit = () => {

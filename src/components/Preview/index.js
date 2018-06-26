@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Link } from 'react-router-dom';
-import { Collection, CollectionItem, Input, Button, Modal } from 'react-materialize';
+import { Collection, CollectionItem, Input, Button } from 'react-materialize';
 import * as CommentActions from '../../actions/comments';
 import './Preview.css';
 
@@ -61,7 +61,13 @@ class Preview extends Component {
       .slice(0, 5)
       .map((comment, i) => (
         <CollectionItem key={i}>
-          <h5>{comment.name}</h5>
+          <h5>
+            <b>Title</b>:
+          <br />
+            {comment.name}
+          </h5>
+          <b>Body</b>:
+          <br />
           {comment.body}
           <br />
           <b>{comment.email}</b>

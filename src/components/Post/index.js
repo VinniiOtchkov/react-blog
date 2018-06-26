@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import './Post.css';
 
 const Post = (props) => {
-    let { post, comments, history, author } = props;
+    let { post, author } = props;
     let authorName = author ? author.name : 'Anonymous';
     const reducedTitle = post.title.slice(0,15);
     const reducedBody = post.body.slice(0,30);
@@ -20,8 +20,6 @@ const Post = (props) => {
                 <br />
                  <Link to={{
                      pathname:`/post/${post.id}`,
-                     post: {...post}, 
-                     comments: [...props.comments]
                      }}>View Post</Link>
             </Card>
         </div>

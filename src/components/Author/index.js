@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { Collection, CollectionItem } from 'react-materialize';
-import { withGoogleMap, GoogleMap, Marker, CardTitle } from 'react-google-maps';
+import { withGoogleMap, GoogleMap, Marker } from 'react-google-maps';
 import './Author.css';
 
 
@@ -24,10 +24,9 @@ const Author = (props) => {
     )
     : '';
 
-  console.log('AUTHOR!!!', currentAuthor);
   return (
     <div>
-      <img src="user_icon.png"/>
+      <img className="userImage" alt="" src={window.location.origin + '/user_icon.png'} />
       {currentAuthor ?
         <Collection header={currentAuthor.name}>
           <CollectionItem>
@@ -61,7 +60,7 @@ const Author = (props) => {
           />
         </div>
       ) : (<p>
-        'Loading'
+        'Loading...'
           </p>
         )}
     </div>
