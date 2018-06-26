@@ -41,7 +41,7 @@ class Preview extends Component {
       alert('Comment fields cannot be blank');
     }
 
-    this.props.CommentActions.addComment({ name: title, body: body, email: email, postId: +this.props.match.params.id})
+    this.props.CommentActions.addComment({ name: title, body: body, email: email, postId: +this.props.match.params.id })
 
     this.setState({ commentFields: false, title: '', body: '', email: '' })
   }
@@ -55,19 +55,19 @@ class Preview extends Component {
       post && post.id
         ? this.props.authors.filter(author => author.id === post.userId)
         : '';
-  let filteredComments = this.props.comments ? this.props.comments
-  .filter(
-    comment => comment.postId === +this.props.match.params.id)
-  .slice(0,5)
-  .map((comment,i) =>  (
-      <CollectionItem key={i}>
-        <h5>{comment.name}</h5>
-        {comment.body}
-        <br />
-        <b>{comment.email}</b>
-      </CollectionItem>
-    )
-  ) : 'Loading...';
+    let filteredComments = this.props.comments ? this.props.comments
+      .filter(
+        comment => comment.postId === +this.props.match.params.id)
+      .slice(0, 5)
+      .map((comment, i) => (
+        <CollectionItem key={i}>
+          <h5>{comment.name}</h5>
+          {comment.body}
+          <br />
+          <b>{comment.email}</b>
+        </CollectionItem>
+      )
+      ) : 'Loading...';
     return (
       <div>
         <h5>{post ? post.title : 'Loading...'}</h5>
@@ -77,8 +77,7 @@ class Preview extends Component {
           {author ? (
             <Link
               to={{
-                pathname: `/author/${author.id}`,
-                author: { ...author }
+                pathname: `/author/${author.name}`,
               }}
             >
               <b>{author.name}</b>

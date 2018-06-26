@@ -4,7 +4,6 @@ import { Navbar, NavItem, Icon} from 'react-materialize';
 import './Nav.css';
 
 const Nav = (props) => {
-console.log('NAV PROPS', props);
 let goHome = (e) => {
     e.preventDefault();
     console.log('works!')
