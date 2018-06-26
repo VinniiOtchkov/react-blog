@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import { Route, withRouter, Switch, Link } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { Navbar, NavItem, Icon } from 'react-materialize';
 import './App.css';
-import logo from './logo.svg';
 
 import NewPost from './components/NewPost/';
 import Preview from './components/Preview/';
@@ -24,12 +22,6 @@ class App extends Component {
     this.props.AuthorActions.fetchAuthors();
     this.props.PostActions.fetchPosts();
     this.props.CommentActions.fetchComments();
-  }
-
-  goHome(e) {
-    e.preventDefault();
-    this.props.history.push('/')
-    console.log('works!')
   }
   render() {
     return (

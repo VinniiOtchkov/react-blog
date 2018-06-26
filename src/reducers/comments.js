@@ -11,7 +11,7 @@ export default (state = initialState, action) => {
     case 'ADD_COMMENT_PENDING':
       return state;
     case 'ADD_COMMENT_FULFILLED':
-      return [...action.payload.data, ...state];
+      return [action.payload.data, ...state];
     case 'ADD_COMMENT_REJECTED':
       return state;
 

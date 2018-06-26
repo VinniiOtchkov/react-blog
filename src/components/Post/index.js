@@ -18,7 +18,11 @@ const Post = (props) => {
                 <p>{post.body.length > 30 ? `${reducedBody}...`: post.body} </p>
                 <p><b>Author</b>:</p>{authorName ===  'Anonymous' ? <p>{authorName}</p> : <Link to={`/author/${authorName}`}>{authorName}</Link>}
                 <br />
-                 <Link to={`/post/${post.id}`}>View Post</Link>
+                 <Link to={{
+                     pathname:`/post/${post.id}`,
+                     post: {...post}, 
+                     comments: [...props.comments]
+                     }}>View Post</Link>
             </Card>
         </div>
     )

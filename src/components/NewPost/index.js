@@ -23,12 +23,21 @@ class NewPost extends Component {
   }
 
   updateField = ({target:{value}}, field) => {
-    field === 'title' ? this.setState({title: value}) : field === 'body' ? this.setState({body: value}) : this.setState({authorID: parseInt(value)})
+    field === 'title' ? 
+    this.setState({title: value}) : 
+    field === 'body' ? 
+    this.setState({body: value}) : 
+    this.setState({authorID: parseInt(value)})
   }
 
   handleSubmit = () => {
     let { title, body, authorID} = this.state;
-    this.props.PostActions.addPost({userId:authorID, title, body})
+    if(title.length !== 0 && body.length !== 0 && authorID.length !== 0){
+      this.props.PostActions.addPost({userId:authorID, title, body})
+      this.props.history.push('/')
+    } else {
+      alert(`All three fields must be filled in to submit a post`)
+    }
   }
   render() {
     let { title, body, authorID} = this.state
@@ -46,7 +55,7 @@ class NewPost extends Component {
         }
         <Input type='checkbox' onClick={this.toggleCheckbox} label='Post Anonymously?' />
         <br />
-        <Link to="/"><Button onClick={this.handleSubmit} waves='light'><Icon left>book</Icon>Submit</Button></Link>
+        <Button onClick={this.handleSubmit} waves='light'><Icon left>book</Icon>Submit</Button>
       </div>
     )
   }
